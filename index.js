@@ -123,11 +123,13 @@ app.post("/delete", (req, res) =>{
     });
     // console.log(id);
 });
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(port);
-const server = app.listen(port);
-console.log(`Server is running at ${server.address().port}`);       
+app.listen(port, () =>{
+    console.log(`Server is running`);
+});
+       
